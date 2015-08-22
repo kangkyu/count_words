@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @text.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= simple_format @text.body %>
+</p>
+
+<p>
+  <strong>Count hash:</strong>
+  <ul>
+  <% @text.count_hash.sort {|a1,a2| a2[1].to_i <=> a1[1].to_i }.each do |key, value| %>
+    <li><%= key %><%= value %></li>
+  <% end %>
+  </ul>
+</p>
+
+<%= link_to 'Edit', edit_text_path(@text) %> |
+<%= link_to 'Back', texts_path %>
